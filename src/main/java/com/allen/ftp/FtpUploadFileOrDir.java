@@ -68,11 +68,12 @@ public class FtpUploadFileOrDir {
         } else {
             File file2 = new File(file.getPath());
             FileInputStream input = new FileInputStream(file2);
+            System.out.println("上传开始...本地路径：" + file.getAbsolutePath());
             ftp.rename(file2.getName(), file2.getName() + ".bak" + datetime14());
             ftp.storeFile(file2.getName(), input);
 
             input.close();
-            System.out.println("上传成功：" + ftp.printWorkingDirectory() + "/" + file2.getName());
+            System.out.println("上传成功...服务器：" + ftp.printWorkingDirectory() + "/" + file2.getName());
         }
     }
     private static String datetime14() {

@@ -18,7 +18,9 @@ public class FtpToolBox {
      * @throws Exception
      */
      public static void  uploadFileOrDid(String srcFile,String destDir,String destIp,int port,String destUser,String destPwd) throws Exception {
-        FtpUploadFileOrDir.uploadFileOrDid(srcFile, destDir, "10.10.55.88", 21, "mpsp", "mpsp4321");
+         System.out.println("@@@ 上传开始...");
+         FtpUploadFileOrDir.uploadFileOrDid(srcFile, destDir, "10.10.55.88", 21, "mpsp", "mpsp4321");
+         System.out.println("@@@ 上传结束...");
     }
 
 

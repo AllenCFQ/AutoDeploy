@@ -26,36 +26,36 @@ public class JavaPpcSsh {
 
         Connection connection = null;
         BufferedReader bufferedReader = null;
-        // ½ÓÊÕÖ´ĞĞ½Å±¾´íÎóÊ±·µ»ØµÄĞÅÏ¢
+        // æ¥æ”¶æ‰§è¡Œè„šæœ¬é”™è¯¯æ—¶è¿”å›çš„ä¿¡æ¯
         BufferedReader errBufferedReader = null;
         Session session = null;
-        // ×Ö·û±àÂë
+        // å­—ç¬¦ç¼–ç 
         String charsetString = "utf-8";
         try {
             InetAddress inetAddress = InetAddress.getByName(destIp);
-            // ²âÊÔÍøÂçµÄÁªÍ¨ĞÔ
+            // æµ‹è¯•ç½‘ç»œçš„è”é€šæ€§
             boolean reachable = inetAddress.isReachable(1000);
             connection = new Connection(destIp,port);
-            // ½¨Á¢Á¬½Ó£¬Èç¹ûÃ»ÓĞ´Ë²½Öè»á±¨Connection is not established!ÁË½âÎ´½¨Á¢
+            // å»ºç«‹è¿æ¥ï¼Œå¦‚æœæ²¡æœ‰æ­¤æ­¥éª¤ä¼šæŠ¥Connection is not established!äº†è§£æœªå»ºç«‹
             connection.connect();
-            // Ğ£ÑéÈ¨ÏŞ
+            // æ ¡éªŒæƒé™
             connection.authenticateWithPassword(user, pasword);
             session = connection.openSession();
-            // Ö´ĞĞÃüÁî
+            // æ‰§è¡Œå‘½ä»¤
 
             session.execCommand(command);
             System.out.println( command+" OK ");
             Thread.sleep(8000);
 
-            // »ñÈ¡Ö´ĞĞÃüÁîÊä³öµÄĞÅÏ¢
+            // è·å–æ‰§è¡Œå‘½ä»¤è¾“å‡ºçš„ä¿¡æ¯
             /**
 
              InputStream stdout = session.getStdout();
-             // »ñÈ¡Ö´ĞĞÃüÁî³öÏÖµÄ´íÎóĞÅÏ¢
+             // è·å–æ‰§è¡Œå‘½ä»¤å‡ºç°çš„é”™è¯¯ä¿¡æ¯
              InputStream stderr = session.getStderr();
              bufferedReader = new BufferedReader(
              new InputStreamReader(stdout, charsetString));
-             // ½ÓÊÕ¶ÁÈ¡µ½µÄ·µ»ØĞÅÏ¢
+             // æ¥æ”¶è¯»å–åˆ°çš„è¿”å›ä¿¡æ¯
              String returnMessage = null;
              while ((returnMessage = bufferedReader.readLine()) != null) {
              System.out.println("1111111" + returnMessage);
@@ -66,7 +66,7 @@ public class JavaPpcSsh {
              System.out.println("222222" + returnMessage);
              }
              Integer exitStatus = session.getExitStatus();
-             System.out.println("·µ»ØµÄ×´Ì¬" + exitStatus);
+             System.out.println("è¿”å›çš„çŠ¶æ€" + exitStatus);
 
              */
 
@@ -94,39 +94,39 @@ public class JavaPpcSsh {
 
         Connection connection = null;
         BufferedReader bufferedReader = null;
-        // ½ÓÊÕÖ´ĞĞ½Å±¾´íÎóÊ±·µ»ØµÄĞÅÏ¢
+        // æ¥æ”¶æ‰§è¡Œè„šæœ¬é”™è¯¯æ—¶è¿”å›çš„ä¿¡æ¯
         BufferedReader errBufferedReader = null;
         Session session = null;
-        // ×Ö·û±àÂë
+        // å­—ç¬¦ç¼–ç 
         String charsetString = "utf-8";
         try {
-            System.out.println("²âÊÔÍøÂçµÄÁªÍ¨ĞÔ"+ip);
+            System.out.println("æµ‹è¯•ç½‘ç»œçš„è”é€šæ€§"+ip);
             InetAddress inetAddress = InetAddress.getByName(ip);
-            // ²âÊÔÍøÂçµÄÁªÍ¨ĞÔ
+            // æµ‹è¯•ç½‘ç»œçš„è”é€šæ€§
             boolean reachable = inetAddress.isReachable(1000);
-            System.out.println("²âÊÔÍøÂçµÄÁªÍ¨ĞÔ"+ip+";"+reachable);
+            System.out.println("æµ‹è¯•ç½‘ç»œçš„è”é€šæ€§"+ip+";"+reachable);
             connection = new Connection(ip,port);
-            // ½¨Á¢Á¬½Ó£¬Èç¹ûÃ»ÓĞ´Ë²½Öè»á±¨Connection is not established!ÁË½âÎ´½¨Á¢
+            // å»ºç«‹è¿æ¥ï¼Œå¦‚æœæ²¡æœ‰æ­¤æ­¥éª¤ä¼šæŠ¥Connection is not established!äº†è§£æœªå»ºç«‹
             connection.connect();
-            System.out.println("Á¬½Ó"+ip+";"+port);
-            // Ğ£ÑéÈ¨ÏŞ
+            System.out.println("è¿æ¥"+ip+";"+port);
+            // æ ¡éªŒæƒé™
             connection.authenticateWithPassword(user2, pw);
             session = connection.openSession();
-            // Ö´ĞĞÃüÁî
+            // æ‰§è¡Œå‘½ä»¤
 
             session.execCommand(command);
             System.out.println( command+" OK ");
             Thread.sleep(8000);
 
-            // »ñÈ¡Ö´ĞĞÃüÁîÊä³öµÄĞÅÏ¢
+            // è·å–æ‰§è¡Œå‘½ä»¤è¾“å‡ºçš„ä¿¡æ¯
             /**
 
              InputStream stdout = session.getStdout();
-             // »ñÈ¡Ö´ĞĞÃüÁî³öÏÖµÄ´íÎóĞÅÏ¢
+             // è·å–æ‰§è¡Œå‘½ä»¤å‡ºç°çš„é”™è¯¯ä¿¡æ¯
              InputStream stderr = session.getStderr();
              bufferedReader = new BufferedReader(
              new InputStreamReader(stdout, charsetString));
-             // ½ÓÊÕ¶ÁÈ¡µ½µÄ·µ»ØĞÅÏ¢
+             // æ¥æ”¶è¯»å–åˆ°çš„è¿”å›ä¿¡æ¯
              String returnMessage = null;
              while ((returnMessage = bufferedReader.readLine()) != null) {
              System.out.println("1111111" + returnMessage);
@@ -137,7 +137,7 @@ public class JavaPpcSsh {
              System.out.println("222222" + returnMessage);
              }
              Integer exitStatus = session.getExitStatus();
-             System.out.println("·µ»ØµÄ×´Ì¬" + exitStatus);
+             System.out.println("è¿”å›çš„çŠ¶æ€" + exitStatus);
 
              */
 
