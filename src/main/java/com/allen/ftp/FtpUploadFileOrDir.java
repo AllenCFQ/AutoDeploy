@@ -1,4 +1,4 @@
-package com.allen;
+package com.allen.ftp;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
